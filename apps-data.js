@@ -35,17 +35,17 @@ const CATEGORIAS = [
 
 const APLICATIVOS = [
   {
-    nombre: "Promesa de Dios para ti",
+    nombre: "Una Promesa de Dios para Ti",
     url: "https://promesa-de-dios-para-ti.vercel.app/",
     categoria: "comunion",
     acceso: "publico", // "publico" o "permiso"
     icono: "📖",
     descripcion:
-      "Recibe una promesa bíblica para tu vida y compártela con quienes más la necesitan. Un momento diario de esperanza y comunión con Dios.",
-    etiquetas: ["Biblia", "Devocional", "Esperanza"],
+      "Devocional diario 2026: recibe cada día una promesa bíblica con audio para escucharla, en español y portugués. Un momento de esperanza y comunión con Dios.",
+    etiquetas: ["Devocional diario", "Con audio", "Español y Português"],
   },
   {
-    nombre: "Curso Fundamentos EA",
+    nombre: "FundamentosEA",
     url: "https://curso-fundamentosea.vercel.app/",
     categoria: "educacion",
     acceso: "publico",
@@ -55,24 +55,24 @@ const APLICATIVOS = [
     etiquetas: ["Curso", "Educación Adventista", "Filosofía"],
   },
   {
-    nombre: "Didáctica EA",
+    nombre: "DidácticaEA — Planificador Didáctico",
     url: "https://didactica-ea.vercel.app/",
     categoria: "educacion",
     acceso: "publico",
     icono: "💡",
     descripcion:
-      "Estrategias y recursos didácticos para docentes: metodologías activas aplicadas desde la cosmovisión adventista.",
-    etiquetas: ["Docentes", "Metodologías", "Recursos"],
+      "Planificador didáctico adventista: diseña tus sesiones de clase con metodologías activas desde la cosmovisión bíblica.",
+    etiquetas: ["Docentes", "Planificación de clases", "Metodologías"],
   },
   {
-    nombre: "UPeU Courses Gestor",
+    nombre: "UPeU Courses Gestor (Genesis Courses)",
     url: "https://upeu-courses-gestor.vercel.app/",
     categoria: "gestion",
     acceso: "permiso",
     icono: "🗂️",
     descripcion:
-      "Gestor de cursos para la Universidad Peruana Unión: organiza asignaturas, programas y la carga académica de forma sencilla.",
-    etiquetas: ["UPeU", "Cursos", "Organización"],
+      "Diseña cursos universitarios alineados a las competencias institucionales y del programa de estudios, integrando la cosmovisión bíblica adventista en todas las fases.",
+    etiquetas: ["UPeU", "Diseño de cursos", "Competencias"],
   },
   {
     nombre: "Gestor de Currículo y Asignaturas",
@@ -81,8 +81,8 @@ const APLICATIVOS = [
     acceso: "permiso",
     icono: "📚",
     descripcion:
-      "Diseña y administra planes curriculares y asignaturas con enfoque adventista, manteniendo coherencia entre niveles y competencias.",
-    etiquetas: ["Currículo", "Asignaturas", "Planificación"],
+      "Elabora el modelo educativo institucional, currículos de pregrado y posgrado, y asignaturas integradas a competencias y a la cosmovisión bíblica adventista.",
+    etiquetas: ["Modelo educativo", "Currículo", "Asignaturas"],
   },
   {
     nombre: "Referencial Gestão Internatos DSA",
