@@ -7,7 +7,7 @@
    datos. La página se organiza sola por categorías.
    ============================================================ */
 
-const CONTACTO = "claudedsa.itam@upeu.edu.pe";
+const CONTACTO = "tito.goicochea@upeu.edu.pe";
 
 const CATEGORIAS = [
   {
