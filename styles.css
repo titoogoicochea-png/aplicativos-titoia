@@ -88,6 +88,7 @@ body {
   letter-spacing: -0.5px;
 }
 
+.destacado-ia  { color: var(--dorado); }
 .destacado-fe  { color: var(--fe); }
 .destacado-edu { color: var(--edu); }
 .destacado-ges { color: var(--ges); }
