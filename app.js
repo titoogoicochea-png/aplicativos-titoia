@@ -15,11 +15,11 @@ const busquedaNodo = document.getElementById("entrada-busqueda");
 
 /* ---------- Estadísticas del encabezado ---------- */
 function pintarEstadisticas() {
-  const publicos = APLICATIVOS.filter((a) => a.acceso === "publico").length;
+  const abiertos = APLICATIVOS.filter((a) => a.acceso !== "permiso").length;
   const datos = [
     { numero: APLICATIVOS.length, etiqueta: "Aplicativos" },
     { numero: CATEGORIAS.length, etiqueta: "Categorías" },
-    { numero: publicos, etiqueta: "De acceso libre" },
+    { numero: abiertos, etiqueta: "Abiertos a todos" },
   ];
   statsNodo.innerHTML = datos
     .map(
@@ -56,19 +56,22 @@ function pintarFiltros() {
 
 /* ---------- Tarjeta de un aplicativo ---------- */
 function tarjetaHTML(app, categoria) {
-  const esPublico = app.acceso === "publico";
-  const insignia = esPublico
-    ? '<span class="insignia insignia-publico">✓ Acceso libre</span>'
-    : '<span class="insignia insignia-permiso">🔑 Con permiso</span>';
+  const esPermiso = app.acceso === "permiso";
+  const insignias = {
+    publico: '<span class="insignia insignia-publico">✓ Acceso libre</span>',
+    registro: '<span class="insignia insignia-registro">📝 Registro libre</span>',
+    permiso: '<span class="insignia insignia-permiso">🔑 Con permiso</span>',
+  };
+  const insignia = insignias[app.acceso] || insignias.publico;
 
   const asunto = encodeURIComponent(`Solicitud de acceso: ${app.nombre}`);
   const cuerpo = encodeURIComponent(
     `Hola Tito:\n\nMe gustaría solicitar acceso al aplicativo "${app.nombre}".\n\nMi nombre: \nInstitución: \nMotivo de uso: \n\n¡Gracias y bendiciones!`
   );
 
-  const botonSecundario = esPublico
-    ? ""
-    : `<a class="boton-solicitar" href="mailto:${CONTACTO}?subject=${asunto}&body=${cuerpo}">Solicitar acceso</a>`;
+  const botonSecundario = esPermiso
+    ? `<a class="boton-solicitar" href="mailto:${CONTACTO}?subject=${asunto}&body=${cuerpo}">Solicitar acceso</a>`
+    : "";
 
   return `
     <article class="tarjeta" style="--color-cat:${categoria.color}">

@@ -38,7 +38,7 @@ const APLICATIVOS = [
     nombre: "Una Promesa de Dios para Ti",
     url: "https://promesa-de-dios-para-ti.vercel.app/",
     categoria: "comunion",
-    acceso: "publico", // "publico" o "permiso"
+    acceso: "publico", // "publico", "registro" o "permiso"
     icono: "📖",
     descripcion:
       "Devocional diario 2026: recibe cada día una promesa bíblica con audio para escucharla, en español y portugués. Un momento de esperanza y comunión con Dios.",
@@ -48,7 +48,7 @@ const APLICATIVOS = [
     nombre: "FundamentosEA",
     url: "https://curso-fundamentosea.vercel.app/",
     categoria: "educacion",
-    acceso: "publico",
+    acceso: "registro",
     icono: "🧭",
     descripcion:
       "Curso interactivo sobre los fundamentos de la Educación Adventista: su filosofía, principios y propósito redentor.",
@@ -58,7 +58,7 @@ const APLICATIVOS = [
     nombre: "DidácticaEA — Planificador Didáctico",
     url: "https://didactica-ea.vercel.app/",
     categoria: "educacion",
-    acceso: "publico",
+    acceso: "registro",
     icono: "💡",
     descripcion:
       "Planificador didáctico adventista: diseña tus sesiones de clase con metodologías activas desde la cosmovisión bíblica.",
