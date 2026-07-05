@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aplicativos TitoIA — Fe, Educación y Gestión</title>
+  <meta name="description" content="Portal de aplicativos para la comunión con Dios, la educación continua y la gestión académica. Herramientas gratuitas y servicios para personas e instituciones." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== ENCABEZADO ===== -->
+  <header class="hero">
+    <nav class="nav">
+      <div class="nav-marca">
+        <span class="nav-logo">✨</span>
+        <span class="nav-nombre">Aplicativos <strong>TitoIA</strong></span>
+      </div>
+      <a class="nav-contacto" id="btn-contacto-nav" href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="hero-contenido">
+      <p class="hero-saludo">Bienvenido 👋</p>
+      <h1>Tecnología al servicio de la <span class="destacado-fe">fe</span>,
+        la <span class="destacado-edu">educación</span>
+        y la <span class="destacado-ges">gestión</span></h1>
+      <p class="hero-texto">
+        Aplicativos creados para ayudar a personas e instituciones en su comunión con Dios,
+        su educación continua y la optimización de su gestión académica.
+        Algunos son de libre acceso y otros se habilitan con permiso del propietario.
+      </p>
+
+      <div class="hero-stats" id="hero-stats"></div>
+
+      <div class="buscador">
+        <span class="buscador-icono">🔍</span>
+        <input type="search" id="entrada-busqueda" placeholder="Busca un aplicativo… (ej. promesa, curso, currículo)" autocomplete="off" />
+      </div>
+
+      <div class="filtros" id="filtros-categoria"></div>
+    </div>
+    <div class="hero-onda">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,60 C240,100 480,10 720,35 C960,60 1200,90 1440,45 L1440,90 L0,90 Z" fill="#f7f8fc"/>
+      </svg>
+    </div>
+  </header>
+
+  <!-- ===== LEYENDA DE ACCESOS ===== -->
+  <section class="leyenda">
+    <div class="leyenda-item">
+      <span class="insignia insignia-publico">✓ Acceso libre</span>
+      <span>Entra directamente, sin registro.</span>
+    </div>
+    <div class="leyenda-item">
+      <span class="insignia insignia-permiso">🔑 Con permiso</span>
+      <span>Solicita acceso al propietario para usarlo.</span>
+    </div>
+  </section>
+
+  <!-- ===== CATÁLOGO (se genera automáticamente desde apps-data.js) ===== -->
+  <main id="catalogo" class="catalogo"></main>
+
+  <!-- ===== CONTACTO ===== -->
+  <section class="contacto" id="contacto">
+    <div class="contacto-tarjeta">
+      <h2>¿Deseas usar un aplicativo con permiso o proponer una idea?</h2>
+      <p>
+        Escríbeme y con gusto habilitaré el acceso para ti o tu institución.
+        Mi propósito es que estos aplicativos bendigan a más personas.
+      </p>
+      <a class="boton-primario" id="btn-contacto" href="#">✉️ Solicitar acceso / Escribir</a>
+    </div>
+  </section>
+
+  <!-- ===== PIE ===== -->
+  <footer class="pie">
+    <p>«Todo lo que hagáis, hacedlo de corazón, como para el Señor» — Colosenses 3:23</p>
+    <p class="pie-credito">Aplicativos TitoIA · Hecho con ❤️ para servir</p>
+  </footer>
+
+  <script src="apps-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
