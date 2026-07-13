@@ -28,7 +28,7 @@ const CATEGORIAS = [
     id: "gestion",
     nombre: "Gestión Académica",
     icono: "📊",
-    descripcion: "Gestores curriculares con IA que ayudan a las instituciones educativas a elaborar sus currículos y asignaturas por competencias, con una cosmovisión bíblica adventista.",
+    descripcion: "Gestores con IA para las instituciones educativas: elaboración de currículos y asignaturas por competencias, y evaluación integral del desempeño docente, con una cosmovisión bíblica adventista.",
     color: "#1e9e6f",
   },
 ];
@@ -93,5 +93,15 @@ const APLICATIVOS = [
     descripcion:
       "Referencial para la gestión de internados de la División Sudamericana: procesos, indicadores y buenas prácticas institucionales. (En portugués)",
     etiquetas: ["Internados", "DSA", "Português"],
+  },
+  {
+    nombre: "EIDD — Evaluación Integral del Desempeño Docente",
+    url: "https://evaluacion-docente-ub.vercel.app/",
+    categoria: "gestion",
+    acceso: "permiso",
+    icono: "🧑‍🏫",
+    descripcion:
+      "Sistema de acompañamiento y evaluación integral del desempeño docente para la Red Educativa Adventista: acompañamiento al aula, autoevaluación, y evaluación de estudiantes, familias y comisión, con analítica, reportes y retroalimentación restauradora desde la cosmovisión bíblica adventista.",
+    etiquetas: ["Acompañamiento docente", "Evaluación integral", "Educación Adventista"],
   },
 ];
