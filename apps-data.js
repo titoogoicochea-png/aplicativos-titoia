@@ -26,7 +26,7 @@ const CATEGORIAS = [
   },
   {
     id: "gestion",
-    nombre: "Gestión Académica",
+    nombre: "Gestión Curricular",
     icono: "📊",
     descripcion: "Gestores con IA para las instituciones educativas: elaboración de currículos y asignaturas por competencias, y evaluación integral del desempeño docente, con una cosmovisión bíblica adventista.",
     color: "#1e9e6f",
@@ -103,5 +103,15 @@ const APLICATIVOS = [
     descripcion:
       "Sistema de acompañamiento y evaluación integral del desempeño docente para la Red Educativa Adventista: acompañamiento al aula, autoevaluación, y evaluación de estudiantes, familias y comisión, con analítica, reportes y retroalimentación restauradora desde la cosmovisión bíblica adventista.",
     etiquetas: ["Acompañamiento docente", "Evaluación integral", "Educación Adventista"],
+  },
+  {
+    nombre: "Currículo EA Paraguay",
+    url: "https://curriculo-ea-paraguay.vercel.app/",
+    categoria: "gestion",
+    acceso: "permiso",
+    icono: "🇵🇾",
+    descripcion:
+      "Gestor curricular exclusivo de la Red Educativa Adventista de la Unión Paraguaya: elaboración y organización del currículo escolar por competencias, integrado a la cosmovisión bíblica adventista.",
+    etiquetas: ["Paraguay", "Currículo escolar", "Red Educativa Adventista"],
   },
 ];
