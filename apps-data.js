@@ -28,8 +28,22 @@ const CATEGORIAS = [
     id: "gestion",
     nombre: "Gestión Curricular",
     icono: "📊",
-    descripcion: "Gestores con IA para las instituciones educativas: elaboración de currículos y asignaturas por competencias, y evaluación integral del desempeño docente, con una cosmovisión bíblica adventista.",
+    descripcion: "Gestores con IA para el diseño del currículo: modelo educativo, currículos escolares y universitarios, cursos y asignaturas por competencias, con una cosmovisión bíblica adventista.",
     color: "#1e9e6f",
+  },
+  {
+    id: "academica",
+    nombre: "Gestión Académica",
+    icono: "📈",
+    descripcion: "Aplicativos con IA para acompañar y evaluar el trabajo académico de la institución: desempeño docente, acompañamiento al aula y retroalimentación restauradora desde la cosmovisión bíblica adventista.",
+    color: "#d97a2b",
+  },
+  {
+    id: "institucional",
+    nombre: "Gestión Institucional",
+    icono: "🏛️",
+    descripcion: "Referenciales y herramientas para la gestión de la institución educativa: procesos, indicadores y buenas prácticas al servicio de la misión.",
+    color: "#3f5a99",
   },
 ];
 
@@ -87,7 +101,7 @@ const APLICATIVOS = [
   {
     nombre: "Referencial Gestão Internatos DSA",
     url: "https://referencial-gestao-internatosdsa.vercel.app/",
-    categoria: "gestion",
+    categoria: "institucional",
     acceso: "permiso",
     icono: "🏫",
     descripcion:
@@ -97,7 +111,7 @@ const APLICATIVOS = [
   {
     nombre: "EIDD — Evaluación Integral del Desempeño Docente",
     url: "https://evaluacion-docente-ub.vercel.app/",
-    categoria: "gestion",
+    categoria: "academica",
     acceso: "permiso",
     icono: "🧑‍🏫",
     descripcion:
