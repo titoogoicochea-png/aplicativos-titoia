@@ -119,13 +119,13 @@ const APLICATIVOS = [
     etiquetas: ["Acompañamiento docente", "Evaluación integral", "Educación Adventista"],
   },
   {
-    nombre: "Currículo EA Paraguay",
-    url: "https://curriculo-ea-paraguay.vercel.app/",
+    nombre: "Currículos EA — Uniones DSA",
+    url: "https://curriculos-ea-unionesdsa.vercel.app/",
     categoria: "gestion",
     acceso: "permiso",
-    icono: "🇵🇾",
+    icono: "🌎",
     descripcion:
-      "Gestor curricular exclusivo de la Red Educativa Adventista de la Unión Paraguaya: elaboración y organización del currículo escolar por competencias, integrado a la cosmovisión bíblica adventista.",
-    etiquetas: ["Paraguay", "Currículo escolar", "Red Educativa Adventista"],
+      "Construye el currículo escolar de cada unión de la División Sudamericana a partir del Modelo Educativo Institucional Adventista: matriz de alineamiento competencial, unidades didácticas asistidas por IA y currículos por materia. Cada unión trabaja su propio proyecto, con su equipo y su modelo educativo, desde la cosmovisión bíblica adventista.",
+    etiquetas: ["Currículo escolar", "Uniones DSA", "Red Educativa Adventista"],
   },
 ];
