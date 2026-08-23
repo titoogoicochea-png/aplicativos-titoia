@@ -302,10 +302,55 @@ body {
   padding: 26px 24px 30px;
 }
 
-.seccion-categoria { margin-top: 38px; }
+/* ===== Barra superior del catálogo ===== */
+.catalogo-barra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+.catalogo-resumen { color: var(--tinta-suave); font-size: 0.92rem; font-weight: 600; }
+.btn-todo {
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--primario);
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  padding: 8px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.btn-todo:hover { background: #eef1fb; border-color: #ccd3ee; }
 
-.seccion-cabecera { display: flex; align-items: center; gap: 14px; }
+/* ===== Secciones desplegables ===== */
+.seccion-categoria { margin-top: 18px; }
+
+.seccion-cabecera {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-align: left;
+  font-family: inherit;
+  color: inherit;
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-left: 5px solid var(--color-cat, var(--primario));
+  border-radius: var(--radio);
+  padding: 16px 20px;
+  cursor: pointer;
+  box-shadow: var(--sombra);
+  transition: box-shadow 0.2s, transform 0.15s;
+}
+.seccion-cabecera:hover { box-shadow: var(--sombra-alta); transform: translateY(-2px); }
+.seccion-cabecera:focus-visible { outline: 3px solid var(--color-cat, var(--primario)); outline-offset: 3px; }
+
 .seccion-icono {
+  flex: none;
   width: 52px; height: 52px;
   display: grid; place-items: center;
   font-size: 1.5rem;
@@ -313,14 +358,64 @@ body {
   color: #fff;
   box-shadow: var(--sombra);
 }
-.seccion-cabecera h2 { font-size: 1.45rem; letter-spacing: -0.3px; }
-.seccion-descripcion { color: var(--tinta-suave); margin-top: 6px; }
+.seccion-textos { flex: 1; min-width: 0; }
+.seccion-titulo {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+}
+.seccion-descripcion {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: var(--tinta-suave);
+  font-size: 0.9rem;
+  line-height: 1.45;
+  margin-top: 4px;
+}
+.seccion-conteo {
+  flex: none;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+  color: var(--color-cat, var(--primario));
+  background: color-mix(in srgb, var(--color-cat) 12%, white);
+  border-radius: 999px;
+  padding: 5px 14px;
+}
+.seccion-flecha {
+  flex: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--tinta-suave);
+  transition: transform 0.3s ease;
+}
+.seccion-categoria.abierta .seccion-flecha { transform: rotate(180deg); }
+
+/* El panel se abre animando la altura de la fila (0fr → 1fr). */
+.seccion-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+.seccion-categoria.abierta .seccion-panel { grid-template-rows: 1fr; }
+.seccion-interior { overflow: hidden; }
+/* Ya terminada la animación se libera el recorte para que las tarjetas
+   puedan levantarse y proyectar su sombra al pasar el mouse. */
+.seccion-panel.expandida .seccion-interior { overflow: visible; }
 
 .tarjetas {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
   gap: 22px;
-  margin-top: 22px;
+  padding-top: 22px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .seccion-panel, .seccion-flecha, .seccion-cabecera { transition: none; }
 }
 
 .tarjeta {
@@ -441,4 +536,17 @@ body {
   .hero-stats { gap: 22px; }
   .leyenda { gap: 14px; flex-direction: column; align-items: center; }
   .tarjetas { grid-template-columns: 1fr; }
+  .seccion-cabecera { gap: 12px; padding: 14px 16px; flex-wrap: wrap; }
+  .seccion-titulo { font-size: 1.12rem; }
+  /* En móvil el conteo baja a su propia línea, como texto simple, para que
+     el título no quede exprimido en una columna angosta. */
+  .seccion-conteo {
+    order: 3;
+    flex: 0 0 100%;
+    margin: 2px 0 0;
+    padding: 0 0 0 64px;
+    background: none;
+    font-size: 0.8rem;
+  }
+  .seccion-descripcion { -webkit-line-clamp: 2; font-size: 0.86rem; }
 }

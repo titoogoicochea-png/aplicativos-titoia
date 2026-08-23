@@ -7,6 +7,9 @@
 
 let filtroActivo = "todos";
 let textoBusqueda = "";
+/* Categorías desplegadas. Arranca con la primera abierta para que se vea
+   que las secciones se abren y se cierran. */
+const categoriasAbiertas = new Set([CATEGORIAS[0].id]);
 
 const catalogo = document.getElementById("catalogo");
 const filtrosNodo = document.getElementById("filtros-categoria");
@@ -106,26 +109,107 @@ function pintarCatalogo() {
     return contenido.includes(texto);
   };
 
-  let html = "";
-  for (const cat of CATEGORIAS) {
-    const apps = APLICATIVOS.filter((a) => a.categoria === cat.id && coincide(a));
-    if (apps.length === 0) continue;
+  /* Al buscar o al filtrar por una categoría, se abre todo lo que coincide
+     para que los resultados estén a la vista sin tener que desplegarlos. */
+  const abrirTodo = texto !== "" || filtroActivo !== "todos";
+
+  const grupos = CATEGORIAS.map((cat) => ({
+    cat,
+    apps: APLICATIVOS.filter((a) => a.categoria === cat.id && coincide(a)),
+  })).filter((g) => g.apps.length > 0);
+
+  if (grupos.length === 0) {
+    catalogo.innerHTML = `<p class="sin-resultados">No se encontró ningún aplicativo con esa búsqueda. 🕊️<br>Prueba con otra palabra.</p>`;
+    return;
+  }
+
+  const total = grupos.reduce((n, g) => n + g.apps.length, 0);
+  const todasAbiertas = grupos.every((g) => abrirTodo || categoriasAbiertas.has(g.cat.id));
+  const plural = (n, singular, pluralPalabra) => `${n} ${n === 1 ? singular : pluralPalabra}`;
+
+  let html = `
+    <div class="catalogo-barra">
+      <span class="catalogo-resumen">${plural(grupos.length, "categoría", "categorías")} · ${plural(total, "aplicativo", "aplicativos")}</span>
+      <button class="btn-todo" id="btn-todo" type="button">${todasAbiertas ? "Cerrar todo" : "Abrir todo"}</button>
+    </div>`;
+
+  for (const { cat, apps } of grupos) {
+    const abierta = abrirTodo || categoriasAbiertas.has(cat.id);
     html += `
-      <section class="seccion-categoria">
-        <div class="seccion-cabecera">
-          <div class="seccion-icono" style="background:${cat.color}">${cat.icono}</div>
-          <h2>${cat.nombre}</h2>
-        </div>
-        <p class="seccion-descripcion">${cat.descripcion}</p>
-        <div class="tarjetas">
-          ${apps.map((a) => tarjetaHTML(a, cat)).join("")}
+      <section class="seccion-categoria ${abierta ? "abierta" : ""}" data-categoria="${cat.id}" style="--color-cat:${cat.color}">
+        <button class="seccion-cabecera" type="button" aria-expanded="${abierta}" aria-controls="panel-${cat.id}">
+          <span class="seccion-icono" style="background:${cat.color}">${cat.icono}</span>
+          <span class="seccion-textos">
+            <span class="seccion-titulo">${cat.nombre}</span>
+            <span class="seccion-descripcion">${cat.descripcion}</span>
+          </span>
+          <span class="seccion-conteo">${plural(apps.length, "aplicativo", "aplicativos")}</span>
+          <span class="seccion-flecha" aria-hidden="true">⌄</span>
+        </button>
+        <div class="seccion-panel ${abierta ? "expandida" : ""}" id="panel-${cat.id}">
+          <div class="seccion-interior">
+            <div class="tarjetas">
+              ${apps.map((a) => tarjetaHTML(a, cat)).join("")}
+            </div>
+          </div>
         </div>
       </section>`;
   }
 
-  catalogo.innerHTML =
-    html ||
-    `<p class="sin-resultados">No se encontró ningún aplicativo con esa búsqueda. 🕊️<br>Prueba con otra palabra.</p>`;
+  catalogo.innerHTML = html;
+  conectarSecciones();
+}
+
+/* ---------- Abrir y cerrar las secciones ---------- */
+function conectarSecciones() {
+  catalogo.querySelectorAll(".seccion-categoria").forEach((seccion) => {
+    const id = seccion.dataset.categoria;
+    const cabecera = seccion.querySelector(".seccion-cabecera");
+    const panel = seccion.querySelector(".seccion-panel");
+
+    /* Mientras se anima el panel se recorta; ya abierto se deja visible para
+       que no se corten las sombras de las tarjetas al pasar el mouse. */
+    panel.addEventListener("transitionend", (e) => {
+      if (e.propertyName === "grid-template-rows") liberarRecorte(seccion, panel);
+    });
+
+    cabecera.addEventListener("click", () => {
+      const abierta = seccion.classList.toggle("abierta");
+      cabecera.setAttribute("aria-expanded", abierta);
+      panel.classList.remove("expandida");
+      if (abierta) categoriasAbiertas.add(id);
+      else categoriasAbiertas.delete(id);
+      /* Respaldo por si la transición no llega a dispararse (movimiento
+         reducido, pestaña en segundo plano…). */
+      setTimeout(() => liberarRecorte(seccion, panel), 450);
+      document.getElementById("btn-todo").textContent = todasSeccionesAbiertas() ? "Cerrar todo" : "Abrir todo";
+    });
+  });
+
+  const btnTodo = document.getElementById("btn-todo");
+  btnTodo.addEventListener("click", () => {
+    const abrir = !todasSeccionesAbiertas();
+    catalogo.querySelectorAll(".seccion-categoria").forEach((seccion) => {
+      const id = seccion.dataset.categoria;
+      seccion.classList.toggle("abierta", abrir);
+      seccion.querySelector(".seccion-cabecera").setAttribute("aria-expanded", abrir);
+      const panel = seccion.querySelector(".seccion-panel");
+      panel.classList.remove("expandida");
+      setTimeout(() => liberarRecorte(seccion, panel), 450);
+      if (abrir) categoriasAbiertas.add(id);
+      else categoriasAbiertas.delete(id);
+    });
+    btnTodo.textContent = abrir ? "Cerrar todo" : "Abrir todo";
+  });
+}
+
+function liberarRecorte(seccion, panel) {
+  if (seccion.classList.contains("abierta")) panel.classList.add("expandida");
+}
+
+function todasSeccionesAbiertas() {
+  const secciones = [...catalogo.querySelectorAll(".seccion-categoria")];
+  return secciones.length > 0 && secciones.every((s) => s.classList.contains("abierta"));
 }
 
 /* ---------- Contacto ---------- */
