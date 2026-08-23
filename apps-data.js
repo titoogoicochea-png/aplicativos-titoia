@@ -45,6 +45,13 @@ const CATEGORIAS = [
     descripcion: "Referenciales y herramientas para la gestión de la institución educativa: procesos, indicadores y buenas prácticas al servicio de la misión.",
     color: "#3f5a99",
   },
+  {
+    id: "calidad",
+    nombre: "Gestión de la Calidad",
+    icono: "🏅",
+    descripcion: "Sistemas de aseguramiento de la calidad y acreditación para las instituciones educativas adventistas: autoevaluación, evidencias y seguimiento de estándares al servicio de la misión.",
+    color: "#b8455f",
+  },
 ];
 
 const APLICATIVOS = [
@@ -127,5 +134,15 @@ const APLICATIVOS = [
     descripcion:
       "Construye el currículo escolar de cada unión de la División Sudamericana a partir del Modelo Educativo Institucional Adventista: matriz de alineamiento competencial, unidades didácticas asistidas por IA y currículos por materia. Cada unión trabaja su propio proyecto, con su equipo y su modelo educativo, desde la cosmovisión bíblica adventista.",
     etiquetas: ["Currículo escolar", "Uniones DSA", "Red Educativa Adventista"],
+  },
+  {
+    nombre: "QSA-AAA — Adventist Quality System",
+    url: "https://adventist-quality-system-aaa.vercel.app/",
+    categoria: "calidad",
+    acceso: "permiso",
+    icono: "🏅",
+    descripcion:
+      "Sistema de gestión de la calidad para las instituciones educativas adventistas: acompaña los procesos de autoevaluación y acreditación de la Adventist Accrediting Association (AAA), con registro de evidencias, seguimiento de estándares y reportes institucionales desde la cosmovisión bíblica adventista.",
+    etiquetas: ["Calidad", "Acreditación AAA", "Autoevaluación"],
   },
 ];
