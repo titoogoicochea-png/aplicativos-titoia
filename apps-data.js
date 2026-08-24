@@ -35,7 +35,7 @@ const CATEGORIAS = [
     id: "academica",
     nombre: "Gestión Académica",
     icono: "📈",
-    descripcion: "Aplicativos con IA para acompañar y evaluar el trabajo académico de la institución: desempeño docente, acompañamiento al aula y retroalimentación restauradora desde la cosmovisión bíblica adventista.",
+    descripcion: "Aplicativos con IA para acompañar y evaluar el trabajo académico de la institución: desempeño docente, acompañamiento al aula, docentes adjuntos con IA para cada cátedra y retroalimentación restauradora desde la cosmovisión bíblica adventista.",
     color: "#d97a2b",
   },
   {
@@ -144,5 +144,15 @@ const APLICATIVOS = [
     descripcion:
       "Sistema de gestión de la calidad para las instituciones educativas adventistas: acompaña los procesos de autoevaluación y acreditación de la Adventist Accrediting Association (AAA), con registro de evidencias, seguimiento de estándares y reportes institucionales desde la cosmovisión bíblica adventista.",
     etiquetas: ["Calidad", "Acreditación AAA", "Autoevaluación"],
+  },
+  {
+    nombre: "CátedraIA — Docente Adjunto IA",
+    url: "https://catedraia.vercel.app/",
+    categoria: "academica",
+    acceso: "permiso",
+    icono: "🤖",
+    descripcion:
+      "Cada cátedra, con su docente adjunto IA. El docente sube su sílabo, fija el nivel Bloom de cada capacidad y carga sus evidencias auténticas con rúbricas; el adjunto acompaña a los estudiantes 24/7, los empuja en la escalera de Bloom y retroalimenta todo el proceso —sin escribir nunca el entregable calificado—, y devuelve al docente evidencia explicable de dónde se atascan y qué estudiantes están en riesgo.",
+    etiquetas: ["Docente adjunto IA", "Taxonomía de Bloom", "Evidencias auténticas"],
   },
 ];
