@@ -7,9 +7,10 @@
 
 let filtroActivo = "todos";
 let textoBusqueda = "";
-/* Categorías desplegadas. Arranca con la primera abierta para que se vea
-   que las secciones se abren y se cierran. */
-const categoriasAbiertas = new Set([CATEGORIAS[0].id]);
+/* Categorías desplegadas. Al entrar o refrescar la página arrancan todas
+   cerradas: se ve el índice completo de categorías y cada quien abre la
+   que le interesa (o usa "Abrir todo"). */
+const categoriasAbiertas = new Set();
 
 const catalogo = document.getElementById("catalogo");
 const filtrosNodo = document.getElementById("filtros-categoria");
