@@ -57,7 +57,7 @@ const CATEGORIAS = [
 const APLICATIVOS = [
   {
     nombre: "Una Promesa de Dios para Ti",
-    url: "https://promesa-de-dios-para-ti.vercel.app/",
+    url: "https://promesa-de-dios-para-hoy.vercel.app/",
     categoria: "comunion",
     acceso: "publico", // "publico", "registro" o "permiso"
     icono: "📖",
@@ -77,7 +77,7 @@ const APLICATIVOS = [
   },
   {
     nombre: "DidácticaEA — Planificador Didáctico",
-    url: "https://didactica-ea.vercel.app/",
+    url: "https://planificador-secuenciasdidacticas.vercel.app/",
     categoria: "educacion",
     acceso: "registro",
     icono: "💡",
