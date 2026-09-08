@@ -21,8 +21,15 @@ const CATEGORIAS = [
     id: "educacion",
     nombre: "Educación Continua",
     icono: "🎓",
-    descripcion: "Cursos asincrónicos para estar actualizado en temas de educación y un planificador de secuencias didácticas con IA que diseña sesiones de aprendizaje para inicial, primaria, secundaria, universidad y Escuela Sabática.",
+    descripcion: "Cursos asincrónicos para estar actualizado en temas de educación adventista: filosofía, principios y propósito redentor.",
     color: "#2f7dd1",
+  },
+  {
+    id: "didactica",
+    nombre: "Gestión Didáctica",
+    icono: "🧩",
+    descripcion: "Aplicativos con IA para el trabajo didáctico del aula: planificación de secuencias y sesiones de aprendizaje con metodologías activas, y docentes adjuntos IA que acompañan a los estudiantes en cada cátedra, desde la cosmovisión bíblica adventista.",
+    color: "#0e7c86",
   },
   {
     id: "gestion",
@@ -35,7 +42,7 @@ const CATEGORIAS = [
     id: "academica",
     nombre: "Gestión Académica",
     icono: "📈",
-    descripcion: "Aplicativos con IA para acompañar y evaluar el trabajo académico de la institución: desempeño docente, acompañamiento al aula, docentes adjuntos con IA para cada cátedra y retroalimentación restauradora desde la cosmovisión bíblica adventista.",
+    descripcion: "Aplicativos con IA para acompañar y evaluar el trabajo académico de la institución: desempeño docente, acompañamiento al aula y retroalimentación restauradora desde la cosmovisión bíblica adventista.",
     color: "#d97a2b",
   },
   {
@@ -76,13 +83,13 @@ const APLICATIVOS = [
     etiquetas: ["Curso", "Educación Adventista", "Filosofía"],
   },
   {
-    nombre: "DidácticaEA — Planificador Didáctico",
+    nombre: "Planificador Secuencias Didácticas",
     url: "https://planificador-secuenciasdidacticas.vercel.app/",
-    categoria: "educacion",
+    categoria: "didactica",
     acceso: "registro",
     icono: "💡",
     descripcion:
-      "Planificador didáctico adventista: diseña tus sesiones de clase con metodologías activas desde la cosmovisión bíblica.",
+      "Planificador didáctico adventista: diseña tus secuencias y sesiones de clase con metodologías activas desde la cosmovisión bíblica, para inicial, primaria, secundaria, universidad y Escuela Sabática.",
     etiquetas: ["Docentes", "Planificación de clases", "Metodologías"],
   },
   {
@@ -148,7 +155,7 @@ const APLICATIVOS = [
   {
     nombre: "CátedraIA — Docente Adjunto IA",
     url: "https://catedraia.vercel.app/",
-    categoria: "academica",
+    categoria: "didactica",
     acceso: "permiso",
     icono: "🤖",
     descripcion:
