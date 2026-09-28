@@ -162,4 +162,14 @@ const APLICATIVOS = [
       "Cada cátedra, con su docente adjunto IA. El docente sube su sílabo, fija el nivel Bloom de cada capacidad y carga sus evidencias auténticas con rúbricas; el adjunto acompaña a los estudiantes 24/7, los empuja en la escalera de Bloom y retroalimenta todo el proceso —sin escribir nunca el entregable calificado—, y devuelve al docente evidencia explicable de dónde se atascan y qué estudiantes están en riesgo.",
     etiquetas: ["Docente adjunto IA", "Taxonomía de Bloom", "Evidencias auténticas"],
   },
+  {
+    nombre: "DocenteAdjuntoIA",
+    url: "https://docenteadjuntoia-goicochea.vercel.app/",
+    categoria: "didactica",
+    acceso: "permiso",
+    icono: "🧑‍💻",
+    descripcion:
+      "Tu docente adjunto con inteligencia artificial: acompaña al estudiante en su asignatura con el material del propio curso. Se ingresa con el código de clase que entrega el docente, sin necesidad de crear una cuenta.",
+    etiquetas: ["Docente adjunto IA", "Acompañamiento al estudiante", "Código de clase"],
+  },
 ];
