@@ -2,7 +2,7 @@
    AGENTES TITOIA — DATOS
    ============================================================
    Este es el ÚNICO archivo que hay que editar para actualizar
-   la página. Para agregar un aplicativo nuevo, copia un bloque
+   la página. Para agregar un agente nuevo, copia un bloque
    { ... } de la lista APLICATIVOS, pégalo al final y cambia sus
    datos. La página se organiza sola por categorías.
    ============================================================ */
@@ -14,7 +14,7 @@ const CATEGORIAS = [
     id: "comunion",
     nombre: "Comunión con Dios",
     icono: "🙏",
-    descripcion: "Aplicativos que te ayudarán en tu crecimiento espiritual.",
+    descripcion: "Agentes que te ayudarán en tu crecimiento espiritual.",
     color: "#7c5cbf",
   },
   {
@@ -28,7 +28,7 @@ const CATEGORIAS = [
     id: "didactica",
     nombre: "Gestión Didáctica",
     icono: "🧩",
-    descripcion: "Aplicativos con IA para el trabajo didáctico del aula: planificación de secuencias y sesiones de aprendizaje con metodologías activas, y docentes adjuntos IA que acompañan a los estudiantes en cada cátedra, desde la cosmovisión bíblica adventista.",
+    descripcion: "Agentes con IA para el trabajo didáctico del aula: planificación de secuencias y sesiones de aprendizaje con metodologías activas, y docentes adjuntos IA que acompañan a los estudiantes en cada cátedra, desde la cosmovisión bíblica adventista.",
     color: "#0e7c86",
   },
   {
@@ -42,7 +42,7 @@ const CATEGORIAS = [
     id: "academica",
     nombre: "Gestión Académica",
     icono: "📈",
-    descripcion: "Aplicativos con IA para acompañar y evaluar el trabajo académico de la institución: desempeño docente, acompañamiento al aula y retroalimentación restauradora desde la cosmovisión bíblica adventista.",
+    descripcion: "Agentes con IA para acompañar y evaluar el trabajo académico de la institución: desempeño docente, acompañamiento al aula y retroalimentación restauradora desde la cosmovisión bíblica adventista.",
     color: "#d97a2b",
   },
   {

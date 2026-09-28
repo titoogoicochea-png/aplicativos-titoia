@@ -21,7 +21,7 @@ const busquedaNodo = document.getElementById("entrada-busqueda");
 function pintarEstadisticas() {
   const abiertos = APLICATIVOS.filter((a) => a.acceso !== "permiso").length;
   const datos = [
-    { numero: APLICATIVOS.length, etiqueta: "Aplicativos" },
+    { numero: APLICATIVOS.length, etiqueta: "Agentes" },
     { numero: CATEGORIAS.length, etiqueta: "Categorías" },
     { numero: abiertos, etiqueta: "Abiertos a todos" },
   ];
@@ -58,7 +58,7 @@ function pintarFiltros() {
   });
 }
 
-/* ---------- Tarjeta de un aplicativo ---------- */
+/* ---------- Tarjeta de un agente ---------- */
 function tarjetaHTML(app, categoria) {
   const esPermiso = app.acceso === "permiso";
   const insignias = {
@@ -70,7 +70,7 @@ function tarjetaHTML(app, categoria) {
 
   const asunto = encodeURIComponent(`Solicitud de acceso: ${app.nombre}`);
   const cuerpo = encodeURIComponent(
-    `Hola Tito:\n\nMe gustaría solicitar acceso al aplicativo "${app.nombre}".\n\nMi nombre: \nInstitución: \nMotivo de uso: \n\n¡Gracias y bendiciones!`
+    `Hola Tito:\n\nMe gustaría solicitar acceso al agente "${app.nombre}".\n\nMi nombre: \nInstitución: \nMotivo de uso: \n\n¡Gracias y bendiciones!`
   );
 
   const botonSecundario = esPermiso
@@ -91,7 +91,7 @@ function tarjetaHTML(app, categoria) {
         ${(app.etiquetas || []).map((e) => `<span class="etiqueta">${e}</span>`).join("")}
       </div>
       <div class="tarjeta-pie">
-        <a class="boton-abrir" href="${app.url}" target="_blank" rel="noopener">Abrir aplicativo →</a>
+        <a class="boton-abrir" href="${app.url}" target="_blank" rel="noopener">Abrir agente →</a>
         ${botonSecundario}
       </div>
     </article>`;
@@ -120,7 +120,7 @@ function pintarCatalogo() {
   })).filter((g) => g.apps.length > 0);
 
   if (grupos.length === 0) {
-    catalogo.innerHTML = `<p class="sin-resultados">No se encontró ningún aplicativo con esa búsqueda. 🕊️<br>Prueba con otra palabra.</p>`;
+    catalogo.innerHTML = `<p class="sin-resultados">No se encontró ningún agente con esa búsqueda. 🕊️<br>Prueba con otra palabra.</p>`;
     return;
   }
 
@@ -130,7 +130,7 @@ function pintarCatalogo() {
 
   let html = `
     <div class="catalogo-barra">
-      <span class="catalogo-resumen">${plural(grupos.length, "categoría", "categorías")} · ${plural(total, "aplicativo", "aplicativos")}</span>
+      <span class="catalogo-resumen">${plural(grupos.length, "categoría", "categorías")} · ${plural(total, "agente", "agentes")}</span>
       <button class="btn-todo" id="btn-todo" type="button">${todasAbiertas ? "Cerrar todo" : "Abrir todo"}</button>
     </div>`;
 
@@ -144,7 +144,7 @@ function pintarCatalogo() {
             <span class="seccion-titulo">${cat.nombre}</span>
             <span class="seccion-descripcion">${cat.descripcion}</span>
           </span>
-          <span class="seccion-conteo">${plural(apps.length, "aplicativo", "aplicativos")}</span>
+          <span class="seccion-conteo">${plural(apps.length, "agente", "agentes")}</span>
           <span class="seccion-flecha" aria-hidden="true">⌄</span>
         </button>
         <div class="seccion-panel ${abierta ? "expandida" : ""}" id="panel-${cat.id}">
