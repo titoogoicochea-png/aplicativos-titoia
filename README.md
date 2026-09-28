@@ -1,4 +1,4 @@
-# Aplicativos TitoIA 
+# Agentes TitoIA 
 
 Portal que reúne y organiza todos los aplicativos de Tito, para ayudar a personas
 e instituciones en su **comunión con Dios**, su **educación continua** y su
@@ -21,9 +21,9 @@ La forma más fácil: **pedírselo a Claude** — "agrega mi nuevo aplicativo X 
 
 El proyecto está pensado para Vercel (igual que los demás aplicativos):
 
-1. Subir esta carpeta a un repositorio de GitHub llamado `aplicativos-titoia`.
+1. Subir esta carpeta a un repositorio de GitHub llamado `agentes-titoia`.
 2. En Vercel: "Add New Project" → importar ese repositorio → Deploy.
-3. Quedará publicado en `https://aplicativos-titoia.vercel.app/`.
+3. Quedará publicado en `https://agentes-titoia.vercel.app/`.
 
 Después de eso, **cada cambio que se suba a GitHub se publica solo** en la página,
 sin hacer nada más.
