@@ -1,5 +1,5 @@
 /* ============================================================
-   APLICATIVOS TITOIA — LÓGICA DE LA PÁGINA
+   AGENTES TITOIA — LÓGICA DE LA PÁGINA
    ============================================================
    No hace falta editar este archivo: lee los datos de
    apps-data.js y construye la página automáticamente.
@@ -215,7 +215,7 @@ function todasSeccionesAbiertas() {
 
 /* ---------- Contacto ---------- */
 function configurarContacto() {
-  const asunto = encodeURIComponent("Contacto desde Aplicativos TitoIA");
+  const asunto = encodeURIComponent("Contacto desde Agentes TitoIA");
   document.getElementById("btn-contacto").href = `mailto:${CONTACTO}?subject=${asunto}`;
 }
 
